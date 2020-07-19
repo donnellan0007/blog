@@ -100,8 +100,6 @@
   display: grid;
   -ms-grid-columns: 10% (minmax(75px, 1fr))[8] 10%;
       grid-template-columns: 10% repeat(8, minmax(75px, 1fr)) 10%;
-  -ms-grid-rows: 10% (minmax(100px, 1fr))[5] 10%;
-      grid-template-rows: 10% repeat(5, minmax(100px, 1fr)) 10%;
 }
 
 .articles__featured {
@@ -114,8 +112,10 @@
 }
 
 .articles__featured img {
-  width: auto;
-  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  max-height: 100%;
 }
 
 .articles__sub {
