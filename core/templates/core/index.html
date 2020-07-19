@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbost Secondary College Magazine</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__element nav__heading">
+            <a href="#"><h1>OSC Magazine</h1></a>
+        </div>
+        <div class="nav__element nav__profile-section">
+            <button class="btn btn__link--dark"><i class="feather-icon" data-feather="edit-2"></i> Sign Up To Write</button>
+            <button class="btn btn__primary--dark"><i class="feather-icon" data-feather="archive"></i> View Archive</button>
+        </div>
+    </nav> 
+
+    <section class="articles">
+        <div class="articles__featured">
+            <img src="https://via.placeholder.com/800x400" alt="Featured Article">
+        </div>
+        <div class="articles__sub">
+            <img src="https://via.placeholder.com/250x200" alt="Sub Articles">
+            <img src="https://via.placeholder.com/250x200" alt="Sub Articles">
+        </div>
+    </section>
+    
+<script>
+    feather.replace();
+</script>    
+</body>
+</html>
