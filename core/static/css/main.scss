@@ -46,10 +46,35 @@
 }
 
 .articles {
+    font-family: 'Questrial', sans-serif;
     display: grid;
-    grid-template-columns: 10% repeat(8, minmax(75px, 1fr)) 10%;
+    grid-template-columns: 10% 50% 5% 20%;
+    grid-template-rows: 5% 10% repeat(4, 10%);
+    &__link {
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            color: lighten(black, 50);
+        }
+    }
+    &__sub {
+    }
+    &__title {
+        margin: {
+            top: 15px;
+            bottom: 5px;
+        }
+        font-size: 1.5em;
+        &--featured {
+            margin: {
+                top: 15px;
+                bottom: 5px;
+            }
+            font-size: 2.5em;
+        }
+    }
     &__featured {
-        grid-column: 2/7;
+        grid-column: 2;
         grid-row: 2/4;
         img {
             object-fit: cover;
@@ -57,11 +82,22 @@
             max-height: 100%;
         }
     }
+    &__tags {
+        h1 {
+            font-size: 1.25rem;
+        }
+        padding: 20px;
+        grid-column: 2;
+        grid-row: 6;
+        background: #e4e4e4;
+    }
     &__sub {
-        grid-column: 8/10;
-        grid-row: 2/4;
-        text-align: right;
+        grid-column: 4/5;
+        grid-row: 2/8;
         img {
+            object-fit: cover;
+            width: 100%;
+            max-height: 100%;
         }
     }
 }
