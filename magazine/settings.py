@@ -126,7 +126,7 @@ STATIC_DIR = [
     STATIC_DIR,
 ]
 
-from .config import email_pass
+from passconf.config import email_pass
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
