@@ -1,65 +1,61 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbost Secondary College Magazine</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
-    <nav class="nav">
-        <div class="nav__element nav__heading">
-            <a href="#"><h1>OSC Magazine</h1></a>
+{% block content %}
+<section class="articles">
+    <div class="articles__featured">
+        <img id="featured-img" src="{% static 'images/bg.jpg' %}" alt="Featured Article">
+        <h1 class="articles__title--featured articles__link">Lorem ipsum dolor sit amet.</h1>
+        <p class="articles__sub articles__link"><span class="articles__author">OSC Mag Team</span></p>
+    </div>
+    <!-- <div class="articles__tags">
+        <h1>Read more tags</h1>
+            <div class="tags__tag">
+                <p>Art</p>
+            </div>
+            <div class="tags__tag">
+                <p>Art</p>
+            </div>
+            <div class="tags__tag">
+                <p>Art</p>
+            </div>
+    </div> -->
+    <div class="articles__special">
+        <h1 style="margin-bottom: 20px;"> <span data-feather="loader"></span> Special Posts</h1>
+        <div class="articles__special-container">
+            <div class="articles__post">
+                <img src="https://via.placeholder.com/300x160" alt="Sub Articles">
+            </div>
+            <div class="articles__post">
+                <img src="https://via.placeholder.com/300x160" alt="Sub Articles">
+            </div>
         </div>
-        <div class="nav__element nav__profile-section">
-            <button class="btn btn__link--dark"><i class="feather-icon" data-feather="edit-2"></i> Sign Up To Write</button>
-            <button class="btn btn__primary--dark"><i class="feather-icon" data-feather="archive"></i> View Archive</button>
+    </div>
+    <div class="articles__sub">
+        <div class="articles__article">
+            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
+            <h1 class="articles__title articles__link">COVID Shuts Down School</h1>
         </div>
-    </nav> 
+        <div class="articles__article">
+            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
+            <h1 class="articles__title articles__link">Home Schooling Highlights</h1>
+        </div>
+        <div class="articles__article">
+            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
+            <h1 class="articles__title articles__link">COVID Shuts Down School</h1>
+        </div>
+        <div class="articles__article">
+            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
+            <h1 class="articles__title articles__link">Home Schooling Highlights</h1>
+        </div>
+    </div>
+</section>
 
-    <section class="articles">
-        <div class="articles__featured">
-            <img src="{% static 'images/bg.jpg' %}" alt="Featured Article">
-            <h1 class="articles__title--featured articles__link">Lorem ipsum dolor sit amet.</h1>
-            <p class="articles__sub articles__link"><span class="articles__author">OSC Mag Team</span></p>
-        </div>
-        <div class="articles__tags">
-            <h1>Read more tags</h1>
-            <!-- .tags__ -->
-                <div class="tags__tag">
-                    <p>Art</p>
-                </div>
-                <div class="tags__tag">
-                    <p>Art</p>
-                </div>
-                <div class="tags__tag">
-                    <p>Art</p>
-                </div>
-        </div>
-        <div class="articles__sub">
-            <div class="articles__article">
-                <img src="https://via.placeholder.com/250x175" alt="Sub Articles">
-                <h1 class="articles__title articles__link">COVID Shuts Down School</h1>
-            </div>
-            <div class="articles__article">
-                <img src="https://via.placeholder.com/250x175" alt="Sub Articles">
-                <h1 class="articles__title articles__link">Home Schooling Highlights</h1>
-            </div>
-            <div class="articles__article">
-                <img src="https://via.placeholder.com/250x175" alt="Sub Articles">
-                <h1 class="articles__title articles__link">COVID Shuts Down School</h1>
-            </div>
-            <div class="articles__article">
-                <img src="https://via.placeholder.com/250x175" alt="Sub Articles">
-                <h1 class="articles__title articles__link">Home Schooling Highlights</h1>
-            </div>
-        </div>
-    </section>
-    
-<script>
-    feather.replace();
-</script>    
-</body>
-</html>
+{% for latest in latest %}
+    {{ latest.title }}
+{% endfor %}
+
+<!-- <div class="articles__search">
+    <h1 style="margin-bottom: 20px;"> <span data-feather="loader"></span> Can't find what you're looking for?</h1> <span><i style="margin-top:8px;margin-right: 3px;" class="feather-icon" data-feather="search"></i></span><input type="search" placeholder="Search Site">
+</div> -->
+
+{% endblock %}
