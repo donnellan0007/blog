@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbost Secondary College Magazine</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+        $('#osc-nav-he').click(function(e){
+            e.preventDefault();
+            $.ajax({
+                type: "GET",
+                url: "index.html",
+                data: { },
+                success: function(data){
+                    $('').html(data);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__element nav__heading">
+            <a id="osc-nav-he" href="{% url 'core:index' %}"><h1 id="osc-nav-he">OSC Magazine</h1></a>
+        </div>
+        <div class="nav__element nav__profile-section">
+            <span><i style="margin-top:8px;margin-right: 3px;" class="feather-icon" data-feather="search"></i></span><input type="search" placeholder="Search Site">
+            {% if user.is_authenticated %}
+            <button class="btn btn__link--dark" id="profile-nav-stuff"><i class="feather-icon" data-feather="user"></i> {{ user }}</button>
+            {% else %}
+            <button class="btn btn__link--dark"><i class="feather-icon" data-feather="edit-2"></i> Sign Up To Write</button>
+            {% endif %}
+            <button class="btn btn__primary--dark"><i class="feather-icon" data-feather="archive"></i> View Archive</button>
+        </div>
+    </nav> 
+
+    {% block content %} {% endblock %}
+
+
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

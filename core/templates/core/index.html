@@ -1,4 +1,6 @@
+{% extends 'core/base.html' %}
 {% load static %}
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,26 +15,60 @@
     <nav class="nav">
         <div class="nav__element nav__heading">
             <a href="#"><h1>OSC Magazine</h1></a>
+=======
+{% block content %}
+<section class="articles">
+    <div class="articles__featured">
+        <img id="featured-img" src="{% static 'images/bg.jpg' %}" alt="Featured Article">
+        <h1 class="articles__title--featured articles__link">{{ latest.title }}</h1>
+        <p class="articles__sub articles__link"><span class="articles__author">By <span style="font-weight: 700;">{{ latest.author }}</span></p>
+    </div>
+    <!-- <div class="articles__tags">
+        <h1>Read more tags</h1>
+            <div class="tags__tag">
+                <p>Art</p>
+            </div>
+            <div class="tags__tag">
+                <p>Art</p>
+            </div>
+            <div class="tags__tag">
+                <p>Art</p>
+            </div>
+    </div> -->
+    <div class="articles__special">
+        <h1 style="margin-bottom: 20px;"> <span data-feather="loader"></span> Special Posts</h1>
+        <div class="articles__special-container">
+            <div class="articles__post">
+                <img src="https://via.placeholder.com/300x160" alt="Sub Articles">
+            </div>
+            <div class="articles__post">
+                <img src="https://via.placeholder.com/300x160" alt="Sub Articles">
+            </div>
+>>>>>>> 1abcae6c3746e6722ee8c855cb397d7f3f6bc99a
         </div>
-        <div class="nav__element nav__profile-section">
-            <button class="btn btn__link--dark"><i class="feather-icon" data-feather="edit-2"></i> Sign Up To Write</button>
-            <button class="btn btn__primary--dark"><i class="feather-icon" data-feather="archive"></i> View Archive</button>
+    </div>
+    <div class="articles__sub">
+        <div class="articles__article">
+            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
+            <h1 class="articles__title articles__link">COVID Shuts Down School</h1>
         </div>
-    </nav> 
+        <div class="articles__article">
+            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
+            <h1 class="articles__title articles__link">Home Schooling Highlights</h1>
+        </div>
+        <div class="articles__article">
+            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
+            <h1 class="articles__title articles__link">COVID Shuts Down School</h1>
+        </div>
+        <div class="articles__article">
+            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
+            <h1 class="articles__title articles__link">Home Schooling Highlights</h1>
+        </div>
+    </div>
+</section>
 
-    <section class="articles">
-        <div class="articles__featured">
-            <img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/tnc_16935516.jpg?crop=0,432,7360,4048&wid=2000&hei=1100&scl=3.68" alt="Featured Article">
-            <h1>Title here</h1>
-        </div>
-        <div class="articles__sub">
-            <img src="https://via.placeholder.com/250x200" alt="Sub Articles">
-            <img src="https://via.placeholder.com/250x200" alt="Sub Articles">
-        </div>
-    </section>
-    
-<script>
-    feather.replace();
-</script>    
-</body>
-</html>
+<!-- <div class="articles__search">
+    <h1 style="margin-bottom: 20px;"> <span data-feather="loader"></span> Can't find what you're looking for?</h1> <span><i style="margin-top:8px;margin-right: 3px;" class="feather-icon" data-feather="search"></i></span><input type="search" placeholder="Search Site">
+</div> -->
+
+{% endblock %}

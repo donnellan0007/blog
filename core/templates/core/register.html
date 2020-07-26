@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form method="POST">
+    <div style="display: none;" class="error">
+        <p id="error-msg"></p>
+    </div>
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Register</button>
+</form>
+
+<style>
+    .error {
+        background: red;
+        padding: 20px;
+        color: white;
+        margin-bottom: 50px;
+    }
+</style>
+
+<script>
+    $("#id_username").keyup(function (e) {
+        var username = $(this).val();
+        $.ajax({
+          url: '/ajax/validate_username/',
+          data: {
+            'username': username
+          },
+          dataType: 'json',
+          success: function (data) {
+            if (data.is_taken) {
+                console.log('YES');
+                $(".error").css('display','block')
+                $("#error-msg").html(data.message)
+            } else {
+                console.log('NO');
+                $(".error").css('display','none')
+            }
+          },
+          error: function(jqXhr) {
+            console.log('YES')
+            alert("ERROR")
+          }
+        });
+  
+      });
+</script>
+
+{% endblock %}

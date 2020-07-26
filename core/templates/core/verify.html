@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Please check your emails. We sent you something</h1>
+<h2>This page will redirect in 10 seconds</h2>
+
+<script>
+    setTimeout(function() {
+        console.log("THIS SHOULD WORK")
+        window.location.replace("{% url 'core:index' %}")
+    },10000)
+</script>
+
+{% endblock %}
