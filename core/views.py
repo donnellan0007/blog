@@ -46,3 +46,16 @@ def register(request):
     else:
         form = ProfileForm()
     return render(request,'core/register.html', {'form' : form})
+
+
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+
+def validate_username(request):
+    username = request.GET.get('username', None)
+    data = {
+        'is_taken': User.objects.filter(username__iexact=username).exists()
+    }
+    if data['is_taken']:
+        data['message'] = 'Someone with that username already exists!'
+    return JsonResponse(data)
