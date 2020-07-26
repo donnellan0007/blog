@@ -4,8 +4,8 @@
 <section class="articles">
     <div class="articles__featured">
         <img id="featured-img" src="{% static 'images/bg.jpg' %}" alt="Featured Article">
-        <h1 class="articles__title--featured articles__link">Lorem ipsum dolor sit amet.</h1>
-        <p class="articles__sub articles__link"><span class="articles__author">OSC Mag Team</span></p>
+        <h1 class="articles__title--featured articles__link">{{ latest.title }}</h1>
+        <p class="articles__sub articles__link"><span class="articles__author">By <span style="font-weight: 700;">{{ latest.author }}</span></p>
     </div>
     <!-- <div class="articles__tags">
         <h1>Read more tags</h1>
@@ -49,10 +49,6 @@
         </div>
     </div>
 </section>
-
-{% for latest in latest %}
-    {{ latest.title }}
-{% endfor %}
 
 <!-- <div class="articles__search">
     <h1 style="margin-bottom: 20px;"> <span data-feather="loader"></span> Can't find what you're looking for?</h1> <span><i style="margin-top:8px;margin-right: 3px;" class="feather-icon" data-feather="search"></i></span><input type="search" placeholder="Search Site">
