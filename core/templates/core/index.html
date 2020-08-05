@@ -1,74 +1,9 @@
 {% extends 'core/base.html' %}
-{% load static %}
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbost Secondary College Magazine</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="manifest" href="{% static 'js/manifest.webmanifest' %}">
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
-    <nav class="nav">
-        <div class="nav__element nav__heading">
-            <a href="#"><h1>OSC Magazine</h1></a>
-=======
-{% block content %}
-<section class="articles">
-    <div class="articles__featured">
-        <img id="featured-img" src="{% static 'images/bg.jpg' %}" alt="Featured Article">
-        <h1 class="articles__title--featured articles__link">{{ latest.title }}</h1>
-        <p class="articles__sub articles__link"><span class="articles__author">By <span style="font-weight: 700;">{{ latest.author }}</span></p>
-    </div>
-    <!-- <div class="articles__tags">
-        <h1>Read more tags</h1>
-            <div class="tags__tag">
-                <p>Art</p>
-            </div>
-            <div class="tags__tag">
-                <p>Art</p>
-            </div>
-            <div class="tags__tag">
-                <p>Art</p>
-            </div>
-    </div> -->
-    <div class="articles__special">
-        <h1 style="margin-bottom: 20px;"> <span data-feather="loader"></span> Special Posts</h1>
-        <div class="articles__special-container">
-            <div class="articles__post">
-                <img src="https://via.placeholder.com/300x160" alt="Sub Articles">
-            </div>
-            <div class="articles__post">
-                <img src="https://via.placeholder.com/300x160" alt="Sub Articles">
-            </div>
->>>>>>> 1abcae6c3746e6722ee8c855cb397d7f3f6bc99a
-        </div>
-    </div>
-    <div class="articles__sub">
-        <div class="articles__article">
-            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
-            <h1 class="articles__title articles__link">COVID Shuts Down School</h1>
-        </div>
-        <div class="articles__article">
-            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
-            <h1 class="articles__title articles__link">Home Schooling Highlights</h1>
-        </div>
-        <div class="articles__article">
-            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
-            <h1 class="articles__title articles__link">COVID Shuts Down School</h1>
-        </div>
-        <div class="articles__article">
-            <img src="https://via.placeholder.com/250x150" alt="Sub Articles">
-            <h1 class="articles__title articles__link">Home Schooling Highlights</h1>
-        </div>
-    </div>
-</section>
 
-<!-- <div class="articles__search">
-    <h1 style="margin-bottom: 20px;"> <span data-feather="loader"></span> Can't find what you're looking for?</h1> <span><i style="margin-top:8px;margin-right: 3px;" class="feather-icon" data-feather="search"></i></span><input type="search" placeholder="Search Site">
-</div> -->
+{% load static %}
+
+{% block content %}
+
+
 
 {% endblock %}
