@@ -13,3 +13,6 @@ def index(request):
         'latest' : latest
     }
     return render(request,'core/index.html', context)
+
+def email(request):
+    return render(request, 'core/email.html')

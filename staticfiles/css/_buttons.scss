@@ -1,0 +1,25 @@
+.btn {
+    font-family: 'Questrial', sans-serif;
+    vertical-align: middle;
+    padding: 8px 16px;
+    border: none; outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        opacity: 0.8;
+    }
+    &__primary {
+        background: blue;
+        &--dark {
+            background: white;
+        }
+    }
+    &__link {
+        background: none;
+        &--dark {
+            background: none;
+            color: white;
+        }
+    }
+}

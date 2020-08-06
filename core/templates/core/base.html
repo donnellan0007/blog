@@ -4,30 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbost Secondary College Magazine</title>
+    <title>Seamus Donnellan</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script>
-        $('#osc-nav-he').click(function(e){
-            e.preventDefault();
-            $.ajax({
-                type: "GET",
-                url: "index.html",
-                data: { },
-                success: function(data){
-                    $('').html(data);
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="container">
 
         <nav class="nav">
-            <h1>Seamus Donnellan</h1>    
-        </nav> 
+            <div class="nav__name">
+                <h1 id="name-item">Seamus Donnellan</h1>
+            </div>
+            <div class="nav__items">
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Hot Takes</a></li>
+                    <div class="menu-icon">
+                        <li class="menu" data-feather="menu"></li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
 
         {% block content %} {% endblock %}
 
@@ -36,6 +35,13 @@
     <script>
         feather.replace()
     </script>
-
+    <script>
+        document.getElementById("name-item").addEventListener("click", () => {
+            let url = "{% url 'core:email' %}";
+            let state = {url: 'new-page.html', page: 2}
+            //history.pushState(state, null, url);
+            //location.href = "{% url 'core:email' %}";
+        })
+    </script>
 </body>
 </html>
