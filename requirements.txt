@@ -2,3 +2,4 @@ django
 whitenoise
 gunicorn
 celery
+ckeditor
