@@ -4,6 +4,7 @@ from django.utils.text import slugify
 import uuid
 from ckeditor.fields import RichTextField
 
+
 # Create your models here.
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
