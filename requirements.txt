@@ -2,4 +2,4 @@ django
 whitenoise
 gunicorn
 celery
-ckeditor
+django-ckeditor
