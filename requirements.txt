@@ -4,3 +4,4 @@ gunicorn
 celery
 django-ckeditor
 djangorestframework
+livereload
