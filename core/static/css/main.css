@@ -781,16 +781,19 @@
 .post {
   margin: 5% 10%;
   height: auto;
+  font-family: "Biko";
   width: auto;
   word-wrap: break-word;
 }
 
 .post h1 {
+  font-family: "Biko";
   font-size: 3em;
   text-align: center;
 }
 
 .post p {
+  font-family: "Biko";
   word-wrap: break-word;
   margin: 15px 0;
   font-weight: lighter;

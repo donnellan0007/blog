@@ -27,6 +27,7 @@ $playfair: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // font-family: "Biko";
     vertical-align: middle;
     // font-weight: bolder;
      
@@ -591,14 +592,17 @@ $playfair: 'Playfair Display', serif;
     margin: 5% 10%;
     // background: rgba(235, 234, 234, 0.76);
     height: auto;
+    font-family: "Biko";
     width: auto;
     // padding: 50px;
     word-wrap: break-word;
     h1 {
+        font-family: "Biko";
         font-size: 3em;
         text-align: center;
     }
     p {
+        font-family: "Biko";
         word-wrap: break-word;
         margin: 15px 0;
         font-weight: lighter;
