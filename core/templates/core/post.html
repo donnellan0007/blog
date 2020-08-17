@@ -5,12 +5,17 @@
     <h1>{{ post.title }}</h1>
     <p>{{ post.timestamp }}</p>
     <div class="post__text">
-        <p style="word-wrap:break-word;">{{ post.content | safe }}</p>
+        <p>{{ post.content | safe }}</p>
     </div>
     <div style="text-align: center; display: flex; justify-content: center;" class="post__icons">
         <a href="index" data-feather="link"></a>
     </div>
 </div>
+
+<style>
+
+</style>
+
 
 <!-- <button id="click">CLICK ME!</button> -->
 

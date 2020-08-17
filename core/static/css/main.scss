@@ -460,6 +460,7 @@ $link-colour: #2a8ce8;
         text-align: center;
     }
     p {
+        word-wrap: break-word;
         margin: 15px 0;
         font-weight: lighter;
         // font-size: 3em;

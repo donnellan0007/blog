@@ -133,6 +133,26 @@ $link-colour: #2a8ce8;
     .posts-slider {
         display: flex;
         flex-wrap: wrap;
+        &__post {
+            width: auto !important;
+        }
+    }
+    .post {
+        margin: 55px 0 !important;
+        h1 {
+            font-size: 2.5em !important;
+        }
+        &__text {
+            img {
+                // margin: 50px 0 50px 0 !important;
+                width: 225px !important;
+                height: auto !important;
+            }
+            margin: 0 0 !important;
+            p {
+                font-size: 16px !important;
+            }
+        }
     }
 }
 
@@ -146,7 +166,7 @@ $link-colour: #2a8ce8;
     // overflow-x: scroll;
     &__post {
         position: relative;
-        // width: 350px; // add back maybe
+        width: 350px; // add back maybe
         height: 230px;
         background: #ECECEC;
         border-radius: 8px;
@@ -160,12 +180,20 @@ $link-colour: #2a8ce8;
         h1 {
             margin-bottom: 5px;
         }
+        a {
+            text-decoration: none;
+            color: black;
+        }
         p {
             background: -webkit-linear-gradient(#333,#eee);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         button {
+            a {
+                color: white;
+                text-decoration: none;
+            }
             // position: absolute;
             margin: 0 auto;
             text-align: center;
@@ -418,4 +446,41 @@ $link-colour: #2a8ce8;
     .read-more {
         display: none;
     }
+}
+
+.post {
+    margin: 5% 10%;
+    // background: rgba(235, 234, 234, 0.76);
+    height: auto;
+    width: auto;
+    // padding: 50px;
+    word-wrap: break-word;
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+    p {
+        word-wrap: break-word;
+        margin: 15px 0;
+        font-weight: lighter;
+        // font-size: 3em;
+        text-align: center;
+    }
+    &__text {
+        img {
+            width: 500px;
+            height: auto;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
+        line-height: 1.8em;
+        margin: 35px 18%;
+        p {
+            font-weight: lighter;
+            text-align: justify;
+            font-size: 20px;
+        }
+    }
+    &__icons {}
 }
