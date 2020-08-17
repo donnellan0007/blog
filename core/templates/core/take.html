@@ -5,6 +5,11 @@
 <div class="take">
     <div class="take__container">
         <div class="take__heading">
+            {% if take.opinion == True %}
+                <div style="margin: 10px 0" class="alert--warning">
+                    <p>This is an opinionated hot take</p>
+                </div>
+            {% endif %}
             <h1>{{ take.title }}</h1>
             <p style="margin-top: 5px">Written by {{ take.author }} &middot; Published {{ take.timestamp|date:"F d Y" }}</p>
         </div>

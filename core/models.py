@@ -58,6 +58,7 @@ class HotTake(models.Model):
     title = models.CharField(max_length=100)
     content = RichTextField()
     timestamp = models.DateTimeField(auto_now_add=True)
+    opinion = models.BooleanField(default=False)
     sourced = models.ManyToManyField("Source",related_name='sourced')
     slug = models.SlugField(unique=True,default="",max_length=1000)
 

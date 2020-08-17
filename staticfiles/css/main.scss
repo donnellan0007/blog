@@ -271,7 +271,7 @@ $playfair: 'Playfair Display', serif;
     width: 100%;
     margin: 0 auto;
     grid-template-columns: 10% 35% 5% 20% 10%;
-    grid-template-rows: 10% 15% 5% 20% 5% 20% 250px;
+    grid-template-rows: 10% 15% 5% 20%;
     &__heading {
         grid-column: 2/3;
         grid-row: 2/3;
@@ -622,4 +622,17 @@ $playfair: 'Playfair Display', serif;
         }
     }
     &__icons {}
+}
+
+
+.alert {
+    &--warning {
+        padding: 20px;
+        width: 80%;
+        margin: 0 auto;
+        color: white;
+        font-family: Biko;
+        font-weight: lighter;
+        background: red;
+    }
 }

@@ -368,8 +368,8 @@
   margin: 0 auto;
   -ms-grid-columns: 10% 35% 5% 20% 10%;
       grid-template-columns: 10% 35% 5% 20% 10%;
-  -ms-grid-rows: 10% 15% 5% 20% 5% 20% 250px;
-      grid-template-rows: 10% 15% 5% 20% 5% 20% 250px;
+  -ms-grid-rows: 10% 15% 5% 20%;
+      grid-template-rows: 10% 15% 5% 20%;
 }
 
 .takes__heading {
@@ -814,5 +814,15 @@
   font-weight: lighter;
   text-align: justify;
   font-size: 20px;
+}
+
+.alert--warning {
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+  font-family: Biko;
+  font-weight: lighter;
+  background: red;
 }
 /*# sourceMappingURL=main.css.map */

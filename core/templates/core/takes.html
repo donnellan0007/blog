@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="takes">
-    <div class="takes__heading">
+    <!-- <div class="takes__heading">
         <h1>Fresh Hot Takes</h1>
     </div>
     {% for take in takes|slice:":1" %}
@@ -16,9 +16,8 @@
     {% for take in takes|slice:"2" %}
     <div style="padding: 15px; color: grey;" class="takes__sub takes__first">
         <h2><a href="{% url 'core:take' slug=take.slug %}">{{ take.title }}</a></h2>
-        <!-- <p style="" class="grad-text">{{ take.content|safe|truncatechars:100|striptags }}</p> -->
     </div>
-    {% endfor %}
+    {% endfor %} -->
     <!-- <div style="padding: 15px; color: grey;" class="takes__sub takes__second">
         <h2><a href="#">Toko</a></h2>
         <p style="" class="grad-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda ratione laudantium nihil ex ipsa. Voluptatibus corporis odio adipisci unde molestias ea dolores non delectus expedita?</p>
@@ -27,6 +26,9 @@
 <div class="posts-container">
     <div class="flex-conn">
         <h1 id="h1_post">Hot Takes</h1>
+    </div>
+    <div style="margin: 20px auto;" class="alert--warning">
+        <p>Sometimes hot takes get opinionated. This is a warning to tell you that yes, there is a conservative, right wing bias on opinion posts; there is no need to worry about this on factual posts</p>
     </div>
     <ul style="width: 100%; flex-wrap: wrap;" class="posts-slider">
         {% for take in takes %}
