@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import 'buttons';
 
 // VARIABLES
 $link-colour: #2a8ce8;
+$playfair: 'Playfair Display', serif;
 
 @font-face {
     font-family: 'BikoBold';
@@ -19,13 +21,14 @@ $link-colour: #2a8ce8;
     src: url(./Biko_Light-Restricted.otf);
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     vertical-align: middle;
-    font-family: 'Biko';
-    font-weight: bolder;
+    // font-weight: bolder;
      
 }
 
@@ -40,6 +43,7 @@ $link-colour: #2a8ce8;
 }
 
 .nav {
+    font-family: 'Biko';
     .menu-icon {
         display: none;
     }
@@ -157,6 +161,7 @@ $link-colour: #2a8ce8;
 }
 
 .posts-slider {
+    font-family: 'Biko';
     position: relative;
     display: flex;
     list-style: none;
@@ -221,6 +226,7 @@ $link-colour: #2a8ce8;
 }
 
 .projects {
+    font-family: 'Biko';
     display: grid;
     justify-content: center;
     width: 100%;
@@ -258,13 +264,111 @@ $link-colour: #2a8ce8;
     }
 }
 
+.takes {
+    font-family: 'Biko';
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 10% 35% 5% 20% 10%;
+    grid-template-rows: 10% 15% 5% 20% 5% 20% 250px;
+    &__heading {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        font-size: 2em;
+    }
+    a {
+        text-decoration: none;
+        color: $link-colour;
+    }
+    &__featured {
+        grid-column: 2/3;
+        grid-row: 4/7;
+        background: #ECECEC;
+        border-radius: 8px;
+        padding: 12px;
+        h1, a{
+            font-size: 3rem;
+            color: $link-colour;
+            text-decoration: none;
+        }
+    }
+    &__sub {
+        // height: 200px;
+        grid-column: 4/6;
+        border-radius: 8px;
+        padding: 16px 8px;
+        background: #ECECEC;
+    }
+    &__first {
+        grid-row: 4/5;
+    }
+    &__second {
+        grid-row: 6/7;
+    }
+}
+
+.take {
+    font-family: $playfair;
+    display: grid;
+    grid-template-columns: 10% 50% 5% auto 10%;
+    grid-template-rows: 50px auto;
+    &__container {
+        grid-row: 2;
+        grid-column: 2/3;
+        font-family: $playfair;
+    }
+    &__heading {
+        h1 {
+            font-size: 2.75em;
+        }
+    }
+    &__body {
+        img {
+            width: 600px;
+            height: auto;
+            text-align: center;
+            margin: 40px 0; 
+            display: block;
+        }
+        line-height: 30px;
+    }
+    &__sources {
+        grid-column: 2/3;
+        grid-row: 3;
+        margin-top: 20px;
+    }
+    &__source {
+        background: rgb(231, 231, 231);
+        margin: 30px 0;
+        padding: 20px;
+    }
+    &__related {
+        font-family: $playfair;
+        grid-row: 2;
+        grid-column: 4/5;
+    }
+    &__related-modal {
+        cursor: pointer;
+        margin: 0 0 50px 0;
+        padding: 25px;
+        background: rgb(248, 248, 248);
+        &:hover {
+            background: rgb(238, 238, 238);
+        }
+    }
+}
+
+
 .grad-text {
+    font-family: 'Biko';
     background: -webkit-linear-gradient(#333,#eee);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .read-more {
+    font-family: 'Biko';
     // position: absolute;
     // top: 20
     // margin: 0 auto;
@@ -290,6 +394,7 @@ $link-colour: #2a8ce8;
 }
 
 .hot-take {
+    font-family: 'Biko';
     overflow-y: auto;
     display: grid;
     grid-template-columns: 10% 35% 5% auto 10%;
@@ -363,6 +468,40 @@ $link-colour: #2a8ce8;
             display: flex;
             flex-direction: column;
             margin: 20px 0;
+        }
+    }
+    .takes {
+        // display: none;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        &__heading {
+            margin: 50px 0;
+            font-size: 1.7em;
+        }
+        &__featured {
+            margin: 25px 0;
+        }
+        &__sub {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+    }
+    .take {
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        img {
+            // margin: 50px 0 50px 0 !important;
+            width: 200px !important;
+            height: auto !important;
+        }
+        h1 {
+            font-size: 1.7em;
         }
     }
     .hot-take {

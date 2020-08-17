@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="takes">
+    <div class="takes__heading">
+        <h1>Fresh Hot Takes</h1>
+    </div>
+    {% for take in takes|slice:":1" %}
+    <div class="takes__featured">
+        <h1><a style="font-size: 0.75em;" href="{% url 'core:take' slug=take.slug %}">{{ take.title }}</a></h1>
+        <p style="line-height: 30px;" class="grad-text">{{ take.content|truncatechars:150|safe|striptags }}</p>
+        <button class="read-more">Read More</button>
+    </div>
+    {% endfor %}
+    {% for take in takes|slice:"2" %}
+    <div style="padding: 15px; color: grey;" class="takes__sub takes__first">
+        <h2><a href="{% url 'core:take' slug=take.slug %}">{{ take.title }}</a></h2>
+        <!-- <p style="" class="grad-text">{{ take.content|safe|truncatechars:100|striptags }}</p> -->
+    </div>
+    {% endfor %}
+    <!-- <div style="padding: 15px; color: grey;" class="takes__sub takes__second">
+        <h2><a href="#">Toko</a></h2>
+        <p style="" class="grad-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda ratione laudantium nihil ex ipsa. Voluptatibus corporis odio adipisci unde molestias ea dolores non delectus expedita?</p>
+    </div> -->
+</div>
+<div class="posts-container">
+    <div class="flex-conn">
+        <h1 id="h1_post">Hot Takes</h1>
+    </div>
+    <ul style="width: 100%; flex-wrap: wrap;" class="posts-slider">
+        {% for take in takes %}
+        <li class="posts-slider__post">
+            <div class="posts-slider__content">
+                <h1><a href="{% url 'core:take' slug=take.slug %}">{{ take.title|truncatechars:15 }}</a></h1>
+                <p style="word-break: break-all;">{{ take.content|truncatechars:150|striptags }}</p>
+                <button><a href="{% url 'core:take' slug=take.slug %}">Read More</a></button>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

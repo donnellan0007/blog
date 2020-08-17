@@ -53,6 +53,33 @@ class Profile(models.Model):
         self.activation_key = self.get_slug()
         super().save(*args, **kwargs)
 
+class HotTake(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    content = RichTextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    sourced = models.ManyToManyField("Source",related_name='sourced')
+    slug = models.SlugField(unique=True,default="",max_length=1000)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        kwargs = {
+            'slug': self.slug
+        }
+        return reverse('core:take')
+
+    def save(self, *args, **kwargs):
+        super().save(*args,**kwargs)
+
+class Source(models.Model):
+    take = models.ForeignKey(HotTake, related_name='sources',on_delete=models.CASCADE) 
+    link = models.CharField(max_length=250)
+
+    def __str__(self):
+        return f"{self.take} : {self.link}"
+
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.db.models import signals
