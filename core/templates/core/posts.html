@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="posts-container">
+    <div class="flex-conn">
+        <h1 id="h1_post">POSTS</h1>
+    </div>
+    <ul style="width: 100%; flex-wrap: wrap;" class="posts-slider">
+        {% for post in posts %}
+        <li class="posts-slider__post">
+            <div class="posts-slider__content">
+                <h1><a href="{% url 'core:post' slug=post.slug %}">{{ post.title|truncatechars:15 }}</a></h1>
+                <p style="word-break: break-all;">{{ post.content|truncatechars:150|striptags }}</p>
+                <button><a href="{% url 'core:post' slug=post.slug %}">Read More</a></button>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

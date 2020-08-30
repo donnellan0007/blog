@@ -2,3 +2,5 @@ django
 whitenoise
 gunicorn
 celery
+django-ckeditor
+djangorestframework

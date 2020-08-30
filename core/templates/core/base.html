@@ -14,13 +14,13 @@
 
         <nav class="nav">
             <div class="nav__name">
-                <h1 id="name-item">Seamus Donnellan</h1>
+                <h1 id="name-item"><a style="color: black; text-decoration: none;" href="{% url 'core:index' %}">Seamus Donnellan</a></h1>
             </div>
             <div class="nav__items">
                 <ul>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="{% url 'core:posts' %}">Blog</a></li>
                     <li><a href="#">Work</a></li>
-                    <li><a href="#">Hot Takes</a></li>
+                    <li><a href="{% url 'core:takes' %}">Hot Takes</a></li>
                     <div class="menu-icon">
                         <li class="menu" data-feather="menu"></li>
                     </div>
