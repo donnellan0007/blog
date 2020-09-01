@@ -1,13 +1,16 @@
 {% load static %}
+{% load pwa %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seamus Donnellan</title>
+    {% progressive_web_app_meta %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <link rel="manifest" href="{% static 'js/manifest.json' %}">
     <script data-ad-client="ca-pub-1463407787859875" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
@@ -36,13 +39,10 @@
     <script>
         feather.replace()
     </script>
-    <script>
-        document.getElementById("name-item").addEventListener("click", () => {
-            let url = "{% url 'core:email' %}";
-            let state = {url: 'new-page.html', page: 2}
-            //history.pushState(state, null, url);
-            //location.href = "{% url 'core:email' %}";
-        })
-    </script>
+    {% comment %}
+    <!-- <script src="{% static 'js/script.js' %}"></script> -->
+    <!-- <script src="{% 'js/script.js' %}"></script> -->
+    <!-- <script src="./script.js"></script> -->
+    {% endcomment %}
 </body>
 </html>
