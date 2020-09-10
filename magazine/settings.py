@@ -25,7 +25,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SECRET_KEY = 'v1*r#!#t1d+q6j))ai_tx@w=ql#@!lajvn*u^_9h9d3)q=jomi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','https://blogdon.herokuapp.com/','blogdon.herokuapp.com']
 
@@ -84,13 +84,32 @@ WSGI_APPLICATION = 'magazine.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blogdb',
+        'USER': 'donnellan0007',
+        'PASSWORD': 'Stevemum1',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
+import psycopg2
+
+DATABASE_URL = os.environ['DATABASE_URL']
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -139,6 +158,7 @@ PWA_APP_SPLASH_SCREEN = [
         'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
     }
 ]
+PWA_SERVICE_WORKER_PATH = os.path.join(TEMPLATE_DIR, 'serviceworker.js')
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
 

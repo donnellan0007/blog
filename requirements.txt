@@ -5,3 +5,5 @@ celery
 django-ckeditor
 djangorestframework
 django-pwa
+psycopg2-binary
+dj-database-url
